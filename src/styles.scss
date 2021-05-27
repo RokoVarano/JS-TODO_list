@@ -3,7 +3,7 @@
 $main-bg: blue;
 $main-text: white;
 $second-bg: white;
-$secong-h: blue;
+$second-h: blue;
 $second-p: black;
 $h-size: 2rem;
 $p-size: 1rem;
@@ -67,3 +67,10 @@ h3 {
 p {
   font-size: $p-size;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@import './assets/styles/navbar';
