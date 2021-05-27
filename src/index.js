@@ -1,15 +1,18 @@
 import './styles.scss';
 
-import { projectForm, taskForm } from './modules/_form';
-
 import navbar from './modules/_navbar';
+
+import { Project } from './modules/_object_classes';
 
 const index = () => {
   const { body } = document;
+  const main = document.createElement('main');
 
-  body.appendChild(navbar());
-  body.appendChild(taskForm());
-  body.appendChild(projectForm());
+  const projects = []; // TODO: Set already existing projects 
+
+  body.appendChild(main);
+  body.insertBefore(navbar(projects), main);
+
   return body;
 };
 

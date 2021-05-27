@@ -1,8 +1,7 @@
 class Project {
-
   constructor(title, tasks = []) {
-    title,
-    tasks
+    this.title = title;
+    this.tasks = tasks;
   }
 
   addTask = task => this.tasks.push(task);
@@ -18,3 +17,5 @@ class Task {
 
   switchDone = () => this.done = !this.done;
 }
+
+export { Project, Task};
