@@ -9,7 +9,7 @@ export default function navbar() {
 
   const h1 = document.createElement('h1');
   h1.textContent = 'Tasker!';
-  navbar.appendChild(h1);
+  link.appendChild(h1);
 
   return navbar;
 }
