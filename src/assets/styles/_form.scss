@@ -1,0 +1,40 @@
+.section-form {
+  display: flex;
+  font-size: 1.6rem;
+  padding: 1rem;
+
+  .article-form {
+    .form {
+      display: inherit;
+      justify-content: center;
+      flex-direction: column;
+
+      input {
+        height: 4rem;
+        width: 100%;
+        margin: 0.4rem;
+        text-align: center;
+        color: $second-h;
+        font-size: 1.6rem;
+      }
+
+      input[type=submit] {
+        background-color: $main-bg;
+        border: none;
+        border-radius: 0.3rem;
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+
+      ::placeholder {
+        color: $main-bg;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+  }
+}
