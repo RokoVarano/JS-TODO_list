@@ -1,4 +1,3 @@
-
 export default function navbar() {
   const navbar = document.createElement('nav');
   navbar.classList.add('main');
@@ -13,4 +12,3 @@ export default function navbar() {
 
   return navbar;
 }
-
