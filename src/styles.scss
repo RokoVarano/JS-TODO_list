@@ -20,6 +20,11 @@ $p-font: 'Roboto', sans-serif;
   color: $main-text;
 }
 
+h1 {
+  font-size: $h-size;
+  font-family: $h-font;
+}
+
 .second {
   background-color: $second-bg;
   color: $second-p;
@@ -27,11 +32,6 @@ $p-font: 'Roboto', sans-serif;
   h1 {
     color: $second-h;
   }
-}
-
-h1 {
-  font-size: $h-size;
-  font-family: $h-font;
 }
 
 h3 {
