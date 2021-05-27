@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$main-bg: blue;
+$main-text: white;
+$second-bg: white;
+$secong-h: blue;
+$second-p: black;
+$h-size: 2rem;
+$p-size: 1rem;
+$h-font: 'Roboto', sans-serif;
+$p-font: 'Roboto', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: $main-bg;
+  color: $main-text;
+}
+
+.second {
+  background-color: $second-bg;
+  color: $second-p;
+
+  h1 {
+    color: $second-h;
+  }
+}
+
+h1 {
+  font-size: $h-size;
+  font-family: $h-font;
+}
+
+h3 {
+  font-size: $h-size/2;
+  font-family: $h-font;
+}
+
+p {
+  font-size: $p-size;
+}
