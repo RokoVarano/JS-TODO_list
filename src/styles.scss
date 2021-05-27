@@ -10,10 +10,35 @@ $p-size: 1rem;
 $h-font: 'Roboto', sans-serif;
 $p-font: 'Roboto', sans-serif;
 
+// global resets
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// End Global reset
 
 .main {
   background-color: $main-bg;
