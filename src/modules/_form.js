@@ -55,7 +55,7 @@ const projectForm = () => {
 
   const submitButton = document.createElement('input');
   submitButton.setAttribute('type', 'submit');
-  submitButton.setAttribute('value', 'create project');
+  submitButton.setAttribute('value', 'create task');
 
   form.appendChild(inputName);
   form.appendChild(submitButton);
