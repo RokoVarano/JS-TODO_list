@@ -23,7 +23,7 @@ class ProjectMemory {
     return projects;
   };
 
-  updateProjectLS = (project) => {
+  updateProject = (project) => {
     let projects;
     if (localStorage.getItem('projects') === null || undefined) {
       projects = [];
@@ -31,6 +31,15 @@ class ProjectMemory {
       projects = JSON.parse(localStorage.getItem('projects'));
     }
     projects[project.id] = project;
+    localStorage.setItem('projects', JSON.stringify(projects));
+
+    return projects;
+  };
+
+  deleteProject = (project) => {
+    const projects = JSON.parse(localStorage.getItem('projects'));
+    const projectId = projects.findIndex((proj) => project.id === proj.id);
+    projects.splice(projectId, 1);
     localStorage.setItem('projects', JSON.stringify(projects));
 
     return projects;
