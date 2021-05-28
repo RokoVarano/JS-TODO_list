@@ -22,6 +22,17 @@ class ProjectMemory {
 
     return projects;
   };
+
+  updateProjectLS = (project) => {
+    let projects;
+    if (localStorage.getItem('projects') === null || undefined) {
+      projects = [];
+    } else {
+      projects = JSON.parse(localStorage.getItem('projects'));
+    }
+    projects[project.id] = project;
+    localStorage.setItem('projects', JSON.stringify(projects));
+  };
 }
 
 export default ProjectMemory;
