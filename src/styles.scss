@@ -27,6 +27,11 @@ body {
   font-size: 62.5%;
   width: 100%;
   height: 100%;
+
+  main {
+    display: flex;
+    height: 100%;
+  }
 }
 
 img {
@@ -73,6 +78,5 @@ a {
   text-decoration: none;
 }
 
-@import './assets/styles/navbar';
 @import './assets/styles/widgets';
 @import './assets//styles/form';

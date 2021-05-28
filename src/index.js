@@ -1,13 +1,24 @@
 import './styles.scss';
-import projectPool from './modules/_projectPool';
-import navbar from './modules/_navbar';
+import bar from './modules/frontend/_bar';
+import ProjectMemory from './modules/backend/_localStorage';
+import { taskForm } from './modules/frontend/_form';
 
 const index = () => {
+  const projectMemory = new ProjectMemory();
+
   const { body } = document;
   const main = document.createElement('main');
 
   body.appendChild(main);
-  body.insertBefore(navbar(projectPool), main);
+
+  const projectSide = document.createElement('div');
+  projectSide.classList.add('side');
+  projectSide.appendChild(taskForm());
+  const listContainer = document.createElement('div');
+  bar(listContainer, projectMemory);
+  projectSide.appendChild(listContainer);
+
+  main.appendChild(projectSide);
 
   return body;
 };

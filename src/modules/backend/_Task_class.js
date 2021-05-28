@@ -3,6 +3,7 @@ export default class Task {
     this.title = title;
     this.date = date;
     this.done = false;
+    this.class = 'Task';
   }
 
   switchDone() {
