@@ -32,6 +32,8 @@ class ProjectMemory {
     }
     projects[project.id] = project;
     localStorage.setItem('projects', JSON.stringify(projects));
+
+    return projects;
   };
 }
 
