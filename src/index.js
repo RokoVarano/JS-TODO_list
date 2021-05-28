@@ -1,7 +1,7 @@
 import './styles.scss';
 import bar from './modules/frontend/_bar';
 import ProjectMemory from './modules/backend/_localStorage';
-import { taskForm } from './modules/frontend/_form';
+import { taskForm, projectForm } from './modules/frontend/_form';
 
 const index = () => {
   const projectMemory = new ProjectMemory();
@@ -13,7 +13,7 @@ const index = () => {
 
   const projectSide = document.createElement('div');
   projectSide.classList.add('side');
-  projectSide.appendChild(taskForm());
+  projectSide.appendChild(projectForm());
   const listContainer = document.createElement('div');
   bar(listContainer, projectMemory);
   projectSide.appendChild(listContainer);

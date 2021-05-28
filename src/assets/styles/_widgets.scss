@@ -27,6 +27,8 @@ $widget-bg: skyblue;
     background-color: $widget-bg;
     display: flex;
     align-items: center;
+    color: black;
+    font-weight: 500;
 
     .x-button {
       background-color: red;
