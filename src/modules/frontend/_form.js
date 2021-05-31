@@ -1,3 +1,5 @@
+import getValue from '../backend/_addProject';
+
 const taskForm = () => {
   const formSection = document.createElement('section');
   formSection.setAttribute('class', 'section-form');
@@ -49,14 +51,16 @@ const projectForm = () => {
   const inputName = document.createElement('input');
   inputName.setAttribute('type', 'text');
   inputName.setAttribute('name', 'name');
+  inputName.setAttribute('class', 'project-name');
   inputName.setAttribute('placeholder', 'Project Name');
   inputName.setAttribute('maxlength', '30');
   inputName.setAttribute('required', true);
 
   const submitButton = document.createElement('input');
   submitButton.setAttribute('type', 'submit');
+  inputName.setAttribute('class', 'project-submit');
   submitButton.setAttribute('value', 'create project');
-
+  submitButton.onclick = (() => getValue(inputName));
   form.appendChild(inputName);
   form.appendChild(submitButton);
 

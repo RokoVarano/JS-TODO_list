@@ -1,7 +1,9 @@
 import './styles.scss';
-import bar from './modules/frontend/_bar';
+
+import { projectForm, taskForm } from './modules/frontend/_form';
+
 import ProjectMemory from './modules/backend/_localStorage';
-import { taskForm, projectForm } from './modules/frontend/_form';
+import bar from './modules/frontend/_bar';
 
 const index = () => {
   const projectMemory = new ProjectMemory();
