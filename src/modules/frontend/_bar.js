@@ -10,6 +10,8 @@ export default function bar(parent, memory) {
     (item) => section.appendChild(itemWidget(parent, item, memory)),
   );
 
+  parent.appendChild(section);
+
   return section;
 }
 
