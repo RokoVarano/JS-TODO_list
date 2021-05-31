@@ -1,12 +1,12 @@
-export default function bar(parent, memory) {
+export default function bar(parent, list, memory) {
   parent.innerHTML = '';
 
   const section = document.createElement('section');
   section.classList.add('main', 'bar', 'list-container');
 
-  if (memory.getAllProjects().length < 1) { return section; }
+  if (list.length < 1) { return section; }
 
-  memory.getAllProjects().map(
+  list.map(
     (item) => section.appendChild(itemWidget(parent, item, memory)),
   );
 
@@ -27,9 +27,18 @@ const itemWidget = (parent, item, memory) => {
   xButton.classList.add('x-button');
   xButton.textContent = 'X';
   xButton.onclick = (() => {
-    // TODO: change 'deleteProject' to a shared name so it can be called here too (not deleteTask!)
-    memory.deleteProject(item);
-    bar(parent, memory);
+    if (item.myClass === 'Project') {
+      memory.deleteProject(item);
+      bar(parent, memory.getAllProjects(), memory);
+    }
+
+    if (item.myClass === 'Task') {
+      const project = memory.findProject(item.projectId);
+      console.log(item.projectId);
+      project.removeTask(item);
+      memory.updateProject(project);
+      bar(parent, project.tasks, memory);
+    }
   });
   container.appendChild(xButton);
 
