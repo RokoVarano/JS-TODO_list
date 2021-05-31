@@ -1,7 +1,7 @@
 import './styles.scss';
 import Project from './modules/backend/_Project_class';
 import Task from './modules/backend/_Task_class';
-import { projectForm, taskForm } from './modules/frontend/_form';
+import { projectForm } from './modules/frontend/_form';
 
 import ProjectMemory from './modules/backend/_localStorage';
 import bar from './modules/frontend/_bar';
@@ -28,11 +28,8 @@ const index = () => {
   projectSide.appendChild(listContainer);
 
   const taskSide = document.createElement('div');
+  taskSide.id = 'tasks-side';
   taskSide.classList.add('side', 'tasks-side');
-  taskSide.appendChild(taskForm());
-  const taskContainer = document.createElement('div');
-  bar(taskContainer, projectMemory, dogProject.tasks);
-  taskSide.appendChild(taskContainer);
 
   main.appendChild(projectSide);
   main.appendChild(taskSide);
