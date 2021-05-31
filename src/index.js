@@ -15,8 +15,7 @@ const index = () => {
   projectSide.classList.add('side');
   projectSide.appendChild(projectForm());
   const listContainer = document.createElement('div');
-  bar(listContainer, projectMemory);
-  projectSide.appendChild(listContainer);
+  projectSide.appendChild(bar(listContainer, projectMemory));
 
   main.appendChild(projectSide);
 
