@@ -1,15 +1,20 @@
-$widget-bg: skyblue;
+$widget-bg: white;
+$projects-bg: skyblue;
+$tasks-bg: goldenrod;
 
 .side {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $widget-bg;
+}
 
-  .projects-side {}
+.projects-side {
+  background-color: $projects-bg;
+}
 
-  .tasks-side {}
+.tasks-side {
+  background-color: $tasks-bg;
 }
 
 .list-container {
