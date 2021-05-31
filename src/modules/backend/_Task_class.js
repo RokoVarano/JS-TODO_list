@@ -1,15 +1,12 @@
-class Task {
-  constructor(title, date, projectId) {
-    this.myClass = 'Task';
+export default class Task {
+  constructor(title, date) {
     this.title = title;
     this.date = date;
     this.done = false;
-    this.projectId = projectId;
+    this.class = 'Task';
   }
 
   switchDone() {
     this.done = !this.done;
   }
 }
-
-export default Task;

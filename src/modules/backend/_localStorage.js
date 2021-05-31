@@ -44,11 +44,6 @@ class ProjectMemory {
 
     return projects;
   };
-
-  findProject = (projectId) => {
-    const projects = JSON.parse(localStorage.getItem('projects'));
-    return projects.find((project) => project.id === projectId);
-  };
 }
 
 export default ProjectMemory;
