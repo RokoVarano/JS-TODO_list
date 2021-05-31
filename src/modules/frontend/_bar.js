@@ -1,12 +1,12 @@
-export default function bar(parent, memory) {
+export default function bar(parent, memory, list) {
   parent.innerHTML = '';
 
   const section = document.createElement('section');
   section.classList.add('main', 'bar', 'list-container');
 
-  if (memory.getAllProjects().length < 1) { return section; }
+  if (list.length < 1) { return section; }
 
-  memory.getAllProjects().map(
+  list.map(
     (item) => section.appendChild(itemWidget(parent, item, memory)),
   );
 
