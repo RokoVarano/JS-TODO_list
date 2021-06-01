@@ -9,12 +9,6 @@ import bar from './modules/frontend/_bar';
 const index = () => {
   const projectMemory = new ProjectMemory();
 
-  const dogProject = new Project('Dog');
-  dogProject.addTask(new Task('pluto', Date.now));
-  dogProject.addTask(new Task('Clifford', Date.now));
-  dogProject.addTask(new Task('Max', Date.now));
-  projectMemory.addProject(dogProject);
-
   const { body } = document;
   const main = document.createElement('main');
 

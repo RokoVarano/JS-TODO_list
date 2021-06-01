@@ -17,17 +17,16 @@ export default function bar(taskSide, memory, list) {
   return section;
 }
 
-const loadTasks = (project, memory) => {
+const loadTasks = (memProject, memory) => {
   const taskSide = document.getElementById('tasks-side');
   taskSide.innerHTML = '';
-  console.log(project);
+  console.log(memProject);
 
   const h1 = document.createElement('h1');
-  h1.textContent = project.title;
+  h1.textContent = memProject.title;
   taskSide.appendChild(h1);
-  taskSide.appendChild(taskForm(project));
+  taskSide.appendChild(taskForm(memProject));
   const taskContainer = document.createElement('div');
-  // bar(taskContainer, memory, project.tasks);
   taskSide.appendChild(taskContainer);
 };
 
