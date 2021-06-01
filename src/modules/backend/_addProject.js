@@ -8,10 +8,10 @@ const getValue = (input) => {
 };
 
 const addTaskToProject = (memProject, inputName, inputDate) => {
-    const name = inputName.value;
-    const date = inputDate.value;
-    const projectMemory = new ProjectMemory();
-    projectMemory.addTaskToProject(memProject, name, date);
+  const name = inputName.value;
+  const date = inputDate.value;
+  const projectMemory = new ProjectMemory();
+  projectMemory.addTaskToProject(memProject, name, date);
 };
 
 export { getValue, addTaskToProject };

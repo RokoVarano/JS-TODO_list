@@ -1,4 +1,6 @@
 import { getValue, addTaskToProject } from '../backend/_addProject';
+import ProjectMemory from '../backend/_localStorage';
+import { loadTasks } from './_bar';
 
 const taskForm = (memProject) => {
   const formSection = document.createElement('section');
@@ -24,9 +26,12 @@ const taskForm = (memProject) => {
   inputDate.setAttribute('required', true);
 
   const submitButton = document.createElement('input');
-  submitButton.setAttribute('type', 'submit');
+  submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('value', 'create task');
-  submitButton.onclick = (() => addTaskToProject(memProject, inputName, inputDate));
+  submitButton.onclick = (() => {
+    addTaskToProject(memProject, inputName, inputDate);
+    loadTasks(new ProjectMemory().findProjectByID(memProject.id));
+  });
 
   form.appendChild(inputName);
   form.appendChild(inputDate);
