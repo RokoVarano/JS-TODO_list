@@ -36,9 +36,7 @@ const taskForm = (memProject) => {
   form.appendChild(inputName);
   form.appendChild(inputDate);
   form.appendChild(submitButton);
-
   formArticle.appendChild(form);
-
   formSection.appendChild(formArticle);
 
   return formSection;

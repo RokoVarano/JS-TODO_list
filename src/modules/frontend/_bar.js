@@ -7,7 +7,9 @@ function bar(parent, memory, list) {
   const section = document.createElement('section');
   section.classList.add('main', 'bar', 'list-container');
 
-  if (list.length < 1) { return section; }
+  if (list.length < 1) {
+    return section;
+  }
 
   list.map(
     (item) => section.appendChild(itemWidget(parent, item, memory)),

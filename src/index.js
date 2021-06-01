@@ -1,11 +1,15 @@
 import './styles.scss';
 import { projectForm } from './modules/frontend/_form';
-
+import Project from './modules/backend/_Project_class';
 import ProjectMemory from './modules/backend/_localStorage';
 import { bar } from './modules/frontend/_bar';
 
 const index = () => {
   const projectMemory = new ProjectMemory();
+
+  if (projectMemory.getAllProjects().length < 1) {
+    projectMemory.addProject(new Project('Default'));
+  }
 
   const { body } = document;
   const main = document.createElement('main');
