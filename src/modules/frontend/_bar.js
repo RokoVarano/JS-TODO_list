@@ -46,10 +46,9 @@ const itemWidget = (taskSide, item, memory) => {
   xButton.onclick = (() => {
     // TODO: change 'deleteProject' to a shared name so it can be called here too (not deleteTask!)
     memory.deleteProject(item);
-    bar(taskSide, memory);
+    bar(taskSide, memory, memory.getAllProjects());
   });
   container.appendChild(xButton);
 
   return container;
 };
-
