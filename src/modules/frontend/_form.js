@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { getValue, addTaskToProject } from '../backend/_addProject';
 import ProjectMemory from '../backend/_localStorage';
 import { loadTasks } from './_bar';

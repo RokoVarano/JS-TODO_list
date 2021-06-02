@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-use-before-define */
 import ProjectMemory from '../backend/_localStorage';
 import { taskForm } from './_form';
 
