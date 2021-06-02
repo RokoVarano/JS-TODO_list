@@ -18,6 +18,9 @@ const index = () => {
 
   const projectSide = document.createElement('div');
   projectSide.classList.add('side', 'projects-side');
+  const projectTitle = document.createElement('h1');
+  projectTitle.textContent = 'Projects';
+  projectSide.appendChild(projectTitle);
   projectSide.appendChild(projectForm());
   const listContainer = document.createElement('div');
   bar(listContainer, projectMemory, projectMemory.getAllProjects());
