@@ -2,7 +2,7 @@ import './styles.scss';
 import { projectForm } from './modules/frontend/_form';
 import Project from './modules/backend/_Project_class';
 import ProjectMemory from './modules/backend/_localStorage';
-import { bar } from './modules/frontend/_bar';
+import { bar, loadTasks } from './modules/frontend/_bar';
 
 const index = () => {
   const projectMemory = new ProjectMemory();
@@ -32,6 +32,14 @@ const index = () => {
 
   main.appendChild(projectSide);
   main.appendChild(taskSide);
+
+  if (localStorage.getItem('saved_proj')) {
+    const savedProjectId = parseInt(localStorage.getItem('saved_proj'), 10);
+    const savedProject = projectMemory.findProjectByID(savedProjectId);
+    console.log(savedProject);
+
+    loadTasks(savedProject);
+  }
 
   return body;
 };

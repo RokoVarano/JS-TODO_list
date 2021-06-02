@@ -29,7 +29,7 @@ const taskWidget = (item, memProject) => {
   return container;
 };
 
-function taskBar(parent, memProject) {
+const taskBar = (parent, memProject) => {
   parent.innerHTML = '';
   const list = memProject.tasks;
 
@@ -39,13 +39,13 @@ function taskBar(parent, memProject) {
   if (list.length < 1) { return section; }
 
   list.map(
-    (task) => section.appendChild(taskWidget(parent, task, memProject)),
+    (task) => section.appendChild(taskWidget(task, memProject)),
   );
 
   parent.appendChild(section);
 
   return section;
-}
+};
 
 const loadTasks = (memProject) => {
   const parent = document.getElementById('tasks-side');
@@ -73,7 +73,6 @@ const itemWidget = (item, memory) => {
   xButton.classList.add('x-button');
   xButton.textContent = 'X';
   xButton.onclick = (() => {
-    // TODO: change 'deleteProject' to a shared name so it can be called here too (not deleteTask!)
     container.parentNode.removeChild(container);
     memory.deleteProject(item);
   });
@@ -82,7 +81,7 @@ const itemWidget = (item, memory) => {
   return container;
 };
 
-function bar(parent, memory, list) {
+const bar = (parent, memory, list) => {
   parent.innerHTML = '';
 
   const section = document.createElement('section');
@@ -99,6 +98,6 @@ function bar(parent, memory, list) {
   parent.appendChild(section);
 
   return section;
-}
+};
 
-export { loadTasks, bar };
+export { bar, loadTasks };

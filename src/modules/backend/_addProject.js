@@ -12,6 +12,8 @@ const addTaskToProject = (memProject, inputName, inputDate) => {
   const date = inputDate.value;
   const projectMemory = new ProjectMemory();
   projectMemory.addTaskToProject(memProject, name, date);
+  localStorage.setItem('saved_proj', memProject.id);
+  window.location.reload(false);
 };
 
 export { getValue, addTaskToProject };

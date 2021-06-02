@@ -1,7 +1,4 @@
-/* eslint-disable import/no-cycle */
 import { getValue, addTaskToProject } from '../backend/_addProject';
-import ProjectMemory from '../backend/_localStorage';
-import { loadTasks } from './_bar';
 
 const taskForm = (memProject) => {
   const formSection = document.createElement('section');
@@ -31,7 +28,6 @@ const taskForm = (memProject) => {
   submitButton.setAttribute('value', 'create task');
   submitButton.onclick = (() => {
     addTaskToProject(memProject, inputName, inputDate);
-    loadTasks(new ProjectMemory().findProjectByID(memProject.id));
   });
 
   form.appendChild(inputName);
