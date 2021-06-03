@@ -26,6 +26,13 @@ const taskWidget = (item, memProject) => {
   priority.textContent = `Priority: ${item.priority}`;
   textContainer.appendChild(priority);
 
+  const updateButton = document.createElement('button');
+  updateButton.setAttribute('class', 'update-button');
+  updateButton.textContent = 'Update Task';
+  updateButton.addEventListener('click', () => {
+    console.log('blah');
+  });
+
   container.appendChild(textContainer);
 
   const xButton = document.createElement('button');
@@ -36,6 +43,7 @@ const taskWidget = (item, memProject) => {
     new ProjectMemory().removeTaskFromProject(memProject, item);
   });
   container.appendChild(xButton);
+  container.appendChild(updateButton);
 
   return container;
 };

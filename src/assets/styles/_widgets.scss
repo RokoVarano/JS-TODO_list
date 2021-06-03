@@ -35,7 +35,8 @@ $tasks-bg: goldenrod;
     padding: 1rem;
     margin: 0.5rem;
     background-color: $widget-bg;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
     color: black;
@@ -53,6 +54,20 @@ $tasks-bg: goldenrod;
       align-items: center;
       justify-content: center;
       font-weight: 1000;
+      cursor: pointer;
     }
+  }
+
+  .update-button {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: max-content;
+    padding: 0.3rem;
+    margin: 0.5rem;
+    color: #fff;
+    background-color: $main-bg;
+    border-radius: 0.5rem;
+    cursor: pointer;
   }
 }
