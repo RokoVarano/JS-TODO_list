@@ -15,6 +15,17 @@ const taskWidget = (item, memProject) => {
   date.textContent = `${item.date}`;
   textContainer.appendChild(date);
 
+  const hr = document.createElement('hr');
+  textContainer.appendChild(hr);
+
+  const desc = document.createElement('p');
+  desc.textContent = `Description: ${item.description}`;
+  textContainer.appendChild(desc);
+
+  const priority = document.createElement('p');
+  priority.textContent = `Priority: ${item.priority}`;
+  textContainer.appendChild(priority);
+
   container.appendChild(textContainer);
 
   const xButton = document.createElement('button');
