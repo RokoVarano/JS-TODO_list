@@ -1,6 +1,4 @@
-import { addTaskToProject, getValue } from '../backend/_addProject';
-
-import checkTask from '../backend/validation';
+import { addValidation, getValue } from '../backend/_addProject';
 
 const taskForm = (memProject) => {
   const formSection = document.createElement('section');
@@ -26,18 +24,10 @@ const taskForm = (memProject) => {
   inputDate.setAttribute('required', true);
 
   const submitButton = document.createElement('input');
-  submitButton.setAttribute('type', 'submit');
+  submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('class', 'submit');
   submitButton.setAttribute('value', 'create task');
-  submitButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (checkTask(inputName, inputDate, submitButton)) {
-      submitButton.setAttribute('class', 'valid-input');
-      addTaskToProject(memProject, inputName, inputDate);
-    } else {
-      submitButton.setAttribute('class', 'invalid-input');
-    }
-  });
+  submitButton.addEventListener('click', addValidation.bind(null, inputName, inputDate, submitButton, memProject));
 
   form.appendChild(inputName);
   form.appendChild(inputDate);
