@@ -33,6 +33,7 @@ const taskForm = (memProject) => {
 
   const normalOption = document.createElement('option');
   normalOption.setAttribute('value', 'Normal');
+  normalOption.setAttribute('selected', true);
   normalOption.textContent = 'Normal';
 
   const lowOption = document.createElement('option');
@@ -53,7 +54,7 @@ const taskForm = (memProject) => {
   submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('class', 'submit');
   submitButton.setAttribute('value', 'create task');
-  submitButton.addEventListener('click', addValidation.bind(null, inputName, inputDate, submitButton, memProject));
+  submitButton.addEventListener('click', addValidation.bind(null, inputName, inputDate, inputDescription, inputPriority, submitButton, memProject));
 
   form.appendChild(inputName);
   form.appendChild(inputDescription);

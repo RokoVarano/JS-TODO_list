@@ -8,19 +8,29 @@ const getValue = (input) => {
   projectMemory.addProject(new Project(inputValue));
 };
 
-const addTaskToProject = (memProject, inputName, inputDate) => {
+const addTaskToProject = (memProject, inputName, inputDate, inputDesc, inputPriority) => {
   const name = inputName.value;
   const date = inputDate.value;
+  const desc = inputDesc.value;
+  const priority = inputPriority.value;
+
   const projectMemory = new ProjectMemory();
-  projectMemory.addTaskToProject(memProject, name, date);
+  projectMemory.addTaskToProject(memProject, name, desc, priority, date);
   localStorage.setItem('saved_proj', memProject.id);
   window.location.reload(false);
 };
 
-const addValidation = (inputName, inputDate, submitButton, memProject) => {
-  if (checkTask(inputName, inputDate, submitButton)) {
+const addValidation = (
+  inputName,
+  inputDate,
+  inputDesc,
+  inputPriority,
+  submitButton,
+  memProject,
+) => {
+  if (checkTask(inputName, inputDate, inputDesc, submitButton)) {
     submitButton.setAttribute('class', 'valid-input');
-    addTaskToProject(memProject, inputName, inputDate);
+    addTaskToProject(memProject, inputName, inputDate, inputDesc, inputPriority);
   } else {
     submitButton.setAttribute('class', 'invalid-input');
   }

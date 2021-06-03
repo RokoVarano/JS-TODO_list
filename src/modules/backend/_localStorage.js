@@ -45,12 +45,17 @@ class ProjectMemory {
     return projects;
   };
 
-  addTaskToProject = (memProject, taskName, taskDate) => {
+  addTaskToProject = (memProject, taskName, taskDescription, taskPriority, taskDate) => {
     const projects = JSON.parse(localStorage.getItem('projects'));
     const project = projects.find((proj) => proj.id === memProject.id);
     project.tasks.push(
       {
-        title: taskName, date: taskDate, done: false, class: 'Task',
+        title: taskName,
+        description: taskDescription,
+        priority: taskPriority,
+        date: taskDate,
+        done: false,
+        class: 'Task',
       },
     );
     this.updateProject(project);

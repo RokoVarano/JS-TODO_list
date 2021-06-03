@@ -1,5 +1,8 @@
-const checkTask = (inputName, inputDate, submitButton) => {
-  if (inputName.value.length > 2 && (inputDate.value !== null || undefined)) {
+const checkTask = (inputName, inputDate, inputDesc, submitButton) => {
+  if (
+    inputName.value.length > 2
+    && inputDesc.value.length > 10
+    && (inputDate.value !== null || undefined)) {
     submitButton.disabled = false;
     if (submitButton.classList.contains('disabled')) {
       submitButton.classList.remove('disabled');
