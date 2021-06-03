@@ -17,6 +17,32 @@ const taskForm = (memProject) => {
   inputName.setAttribute('maxlength', '30');
   inputName.setAttribute('required', true);
 
+  const inputDescription = document.createElement('input');
+  inputDescription.setAttribute('type', 'text');
+  inputDescription.setAttribute('name', 'desc');
+  inputDescription.setAttribute('placeholder', 'Task Description');
+  inputDescription.setAttribute('maxlength', '100');
+  inputDescription.setAttribute('required', true);
+
+  const inputPriority = document.createElement('select');
+  inputPriority.setAttribute('name', 'priority');
+
+  const highOption = document.createElement('option');
+  highOption.setAttribute('value', 'High');
+  highOption.textContent = 'High';
+
+  const normalOption = document.createElement('option');
+  normalOption.setAttribute('value', 'Normal');
+  normalOption.textContent = 'Normal';
+
+  const lowOption = document.createElement('option');
+  lowOption.setAttribute('value', 'Low');
+  lowOption.textContent = 'Low';
+
+  inputPriority.appendChild(highOption);
+  inputPriority.appendChild(normalOption);
+  inputPriority.appendChild(lowOption);
+
   const inputDate = document.createElement('input');
   inputDate.setAttribute('type', 'date');
   inputDate.setAttribute('name', 'date');
@@ -30,6 +56,8 @@ const taskForm = (memProject) => {
   submitButton.addEventListener('click', addValidation.bind(null, inputName, inputDate, submitButton, memProject));
 
   form.appendChild(inputName);
+  form.appendChild(inputDescription);
+  form.appendChild(inputPriority);
   form.appendChild(inputDate);
   form.appendChild(submitButton);
   formArticle.appendChild(form);
