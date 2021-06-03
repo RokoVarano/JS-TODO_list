@@ -30,7 +30,24 @@ const taskWidget = (item, memProject) => {
   updateButton.setAttribute('class', 'update-button');
   updateButton.textContent = 'Update Task';
   updateButton.addEventListener('click', () => {
-    console.log('blah');
+    const parent = document.getElementById('tasks-side');
+    parent.innerHTML = '';
+
+    const h1 = document.createElement('h1');
+    h1.textContent = `Edit Task: ${item.title}`;
+    parent.appendChild(h1);
+    const section = document.createElement('section');
+    section.setAttribute('class', 'section-form');
+    const sectionForm = taskForm().querySelector('.article-form');
+    const form = sectionForm.querySelector('.form');
+    console.log(form);
+    form.elements.name.value = `${item.title}`;
+    form.elements.desc.value = `${item.description}`;
+    form.elements.priority.value = `${item.priority}`;
+    form.elements.date.value = `${item.date}`;
+    // console.log(form.elements.name);
+    section.appendChild(sectionForm);
+    parent.appendChild(section);
   });
 
   container.appendChild(textContainer);
