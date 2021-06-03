@@ -44,6 +44,29 @@ class ProjectMemory {
 
     return projects;
   };
+
+  addTaskToProject = (memProject, taskName, taskDate) => {
+    const projects = JSON.parse(localStorage.getItem('projects'));
+    const project = projects.find((proj) => proj.id === memProject.id);
+    project.tasks.push(
+      {
+        title: taskName, date: taskDate, done: false, class: 'Task',
+      },
+    );
+    this.updateProject(project);
+  }
+
+  findProjectByID = (id) => {
+    const projects = JSON.parse(localStorage.getItem('projects'));
+    const memProject = projects.find((proj) => proj.id === id);
+    return memProject;
+  }
+
+  removeTaskFromProject = (memProject, memTask) => {
+    const taskIndex = memProject.tasks.indexOf(memTask);
+    memProject.tasks.splice(taskIndex, 1);
+    this.updateProject(memProject);
+  }
 }
 
 export default ProjectMemory;

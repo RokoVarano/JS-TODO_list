@@ -5,7 +5,15 @@ const getValue = (input) => {
   const inputValue = input.value;
   const projectMemory = new ProjectMemory();
   projectMemory.addProject(new Project(inputValue));
-  console.log(input.value);
 };
 
-export default getValue;
+const addTaskToProject = (memProject, inputName, inputDate) => {
+  const name = inputName.value;
+  const date = inputDate.value;
+  const projectMemory = new ProjectMemory();
+  projectMemory.addTaskToProject(memProject, name, date);
+  localStorage.setItem('saved_proj', memProject.id);
+  window.location.reload(false);
+};
+
+export { getValue, addTaskToProject };

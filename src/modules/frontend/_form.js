@@ -1,6 +1,6 @@
-import getValue from '../backend/_addProject';
+import { getValue, addTaskToProject } from '../backend/_addProject';
 
-const taskForm = () => {
+const taskForm = (memProject) => {
   const formSection = document.createElement('section');
   formSection.setAttribute('class', 'section-form');
 
@@ -24,15 +24,16 @@ const taskForm = () => {
   inputDate.setAttribute('required', true);
 
   const submitButton = document.createElement('input');
-  submitButton.setAttribute('type', 'submit');
+  submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('value', 'create task');
+  submitButton.onclick = (() => {
+    addTaskToProject(memProject, inputName, inputDate);
+  });
 
   form.appendChild(inputName);
   form.appendChild(inputDate);
   form.appendChild(submitButton);
-
   formArticle.appendChild(form);
-
   formSection.appendChild(formArticle);
 
   return formSection;

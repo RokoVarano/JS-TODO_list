@@ -1,19 +1,15 @@
 import './styles.scss';
-import Project from './modules/backend/_Project_class';
-import Task from './modules/backend/_Task_class';
 import { projectForm } from './modules/frontend/_form';
-
+import Project from './modules/backend/_Project_class';
 import ProjectMemory from './modules/backend/_localStorage';
-import bar from './modules/frontend/_bar';
+import { bar, loadTasks } from './modules/frontend/_bar';
 
 const index = () => {
   const projectMemory = new ProjectMemory();
 
-  const dogProject = new Project('Dog');
-  dogProject.addTask(new Task('pluto', Date.now));
-  dogProject.addTask(new Task('Clifford', Date.now));
-  dogProject.addTask(new Task('Max', Date.now));
-  projectMemory.addProject(dogProject);
+  if (projectMemory.getAllProjects().length < 1) {
+    projectMemory.addProject(new Project('Default'));
+  }
 
   const { body } = document;
   const main = document.createElement('main');
@@ -22,6 +18,9 @@ const index = () => {
 
   const projectSide = document.createElement('div');
   projectSide.classList.add('side', 'projects-side');
+  const projectTitle = document.createElement('h1');
+  projectTitle.textContent = 'Projects';
+  projectSide.appendChild(projectTitle);
   projectSide.appendChild(projectForm());
   const listContainer = document.createElement('div');
   bar(listContainer, projectMemory, projectMemory.getAllProjects());
@@ -33,6 +32,14 @@ const index = () => {
 
   main.appendChild(projectSide);
   main.appendChild(taskSide);
+
+  if (localStorage.getItem('saved_proj')) {
+    const savedProjectId = parseInt(localStorage.getItem('saved_proj'), 10);
+    const savedProject = projectMemory.findProjectByID(savedProjectId);
+    console.log(savedProject);
+
+    loadTasks(savedProject);
+  }
 
   return body;
 };
