@@ -1,4 +1,6 @@
-import { addValidation, getValue } from '../backend/_addProject';
+import { addTaskToProject, getValue } from '../backend/_addProject';
+
+import checkTask from '../backend/validation';
 
 const taskForm = (memProject) => {
   const formSection = document.createElement('section');
@@ -54,7 +56,14 @@ const taskForm = (memProject) => {
   submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('class', 'submit');
   submitButton.setAttribute('value', 'create task');
-  submitButton.addEventListener('click', addValidation.bind(null, inputName, inputDate, inputDescription, inputPriority, submitButton, memProject));
+  submitButton.addEventListener('click', () => {
+    if (checkTask(inputName, inputDate, inputDescription, submitButton)) {
+      submitButton.setAttribute('class', 'valid-input');
+      addTaskToProject(memProject, inputName, inputDate, inputDescription, inputPriority);
+    } else {
+      submitButton.setAttribute('class', 'invalid-input');
+    }
+  });
 
   form.appendChild(inputName);
   form.appendChild(inputDescription);
