@@ -40,7 +40,7 @@ To get a local copy up and running follow these simple example steps.
 
 - Go to the clone's directory
 - run 'npm run build'
-- run 'npx webpack serve'
+- run 'npx run start'
 - the project will be available in localhost:8080
 
 ### Usage
@@ -49,6 +49,7 @@ To get a local copy up and running follow these simple example steps.
 - You can click in your project's name to display it's contents on the yellow side.
 - You can use the Task form to create new Tasks.
 - You can click the 'X' red button to delete a Task or a Project
+- You can click the 'Update Task' Button to edit the corresponding task.
 ### Run tests
 
 - No tests yet
