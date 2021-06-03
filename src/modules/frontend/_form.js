@@ -3,7 +3,6 @@ import { addTaskToProject, editProjectTask, getValue } from '../backend/_addProj
 import checkTask from '../backend/validation';
 
 const taskForm = (memProject, task = null) => {
-  console.log(task);
   const formSection = document.createElement('section');
   formSection.setAttribute('class', 'section-form');
 
@@ -68,11 +67,7 @@ const taskForm = (memProject, task = null) => {
     if (task === null) {
       addTaskToProject(memProject, inputName, inputDate, inputDescription, inputPriority);
     } else {
-      try {
-        editProjectTask(memProject, task, inputName, inputDate, inputDescription, inputPriority);
-      } catch (e) {
-        window.alert(e);
-      }
+      editProjectTask(memProject, task, inputName, inputDate, inputDescription, inputPriority);
     }
   });
 

@@ -36,7 +36,6 @@ const index = () => {
   if (localStorage.getItem('saved_proj')) {
     const savedProjectId = parseInt(localStorage.getItem('saved_proj'), 10);
     const savedProject = projectMemory.findProjectByID(savedProjectId);
-    console.log(savedProject);
 
     loadTasks(savedProject);
   }
