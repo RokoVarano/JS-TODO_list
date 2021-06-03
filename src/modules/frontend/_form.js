@@ -1,8 +1,9 @@
-import { addTaskToProject, getValue } from '../backend/_addProject';
+import { addTaskToProject, editProjectTask, getValue } from '../backend/_addProject';
 
 import checkTask from '../backend/validation';
 
-const taskForm = (memProject) => {
+const taskForm = (memProject, task = null) => {
+  console.log(task);
   const formSection = document.createElement('section');
   formSection.setAttribute('class', 'section-form');
 
@@ -55,13 +56,23 @@ const taskForm = (memProject) => {
   const submitButton = document.createElement('input');
   submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('class', 'submit');
-  submitButton.setAttribute('value', 'create task');
+  submitButton.setAttribute('value',
+    task === null ? 'create task' : 'edit task');
   submitButton.addEventListener('click', () => {
-    if (checkTask(inputName, inputDate, inputDescription, submitButton)) {
-      submitButton.setAttribute('class', 'valid-input');
+    if (!checkTask(inputName, inputDate, inputDescription, submitButton)) {
+      submitButton.setAttribute('class', 'invalid-input');
+      return;
+    }
+
+    submitButton.setAttribute('class', 'valid-input');
+    if (task === null) {
       addTaskToProject(memProject, inputName, inputDate, inputDescription, inputPriority);
     } else {
-      submitButton.setAttribute('class', 'invalid-input');
+      try {
+        editProjectTask(memProject, task, inputName, inputDate, inputDescription, inputPriority);
+      } catch (e) {
+        window.alert(e);
+      }
     }
   });
 

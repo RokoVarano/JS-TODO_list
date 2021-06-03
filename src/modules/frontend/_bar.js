@@ -38,14 +38,12 @@ const taskWidget = (item, memProject) => {
     parent.appendChild(h1);
     const section = document.createElement('section');
     section.setAttribute('class', 'section-form');
-    const sectionForm = taskForm().querySelector('.article-form');
+    const sectionForm = taskForm(memProject, item).querySelector('.article-form');
     const form = sectionForm.querySelector('.form');
-    console.log(form);
     form.elements.name.value = `${item.title}`;
     form.elements.desc.value = `${item.description}`;
     form.elements.priority.value = `${item.priority}`;
     form.elements.date.value = `${item.date}`;
-    // console.log(form.elements.name);
     section.appendChild(sectionForm);
     parent.appendChild(section);
   });

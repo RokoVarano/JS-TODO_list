@@ -61,6 +61,22 @@ class ProjectMemory {
     this.updateProject(project);
   }
 
+  editProjectTask = (memProject, task, taskName, taskDescription, taskPriority, taskDate) => {
+    const projects = JSON.parse(localStorage.getItem('projects'));
+    const project = projects.find((proj) => proj.id === memProject.id);
+    const taskIndex = project.tasks.findIndex((t) => (t.title === task.title)
+      && (t.description === task.description)
+      && (t.priority === task.priority)
+      && (t.date === task.date));
+
+    project.tasks[taskIndex].title = taskName;
+    project.tasks[taskIndex].description = taskDescription;
+    project.tasks[taskIndex].priority = taskPriority;
+    project.tasks[taskIndex].date = taskDate;
+
+    this.updateProject(project);
+  }
+
   findProjectByID = (id) => {
     const projects = JSON.parse(localStorage.getItem('projects'));
     const memProject = projects.find((proj) => proj.id === id);
