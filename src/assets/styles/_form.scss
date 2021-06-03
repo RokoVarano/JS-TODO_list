@@ -19,7 +19,6 @@
       }
 
       input[type=submit] {
-        background-color: $main-bg;
         border: none;
         border-radius: 0.3rem;
         text-decoration: none;
@@ -34,6 +33,20 @@
         color: $main-bg;
         font-size: 1.8rem;
         text-align: center;
+      }
+
+      .valid-input {
+        background-color: #50c878;
+        box-shadow: 0 0 5px #105527;
+      }
+
+      .invalid-input {
+        background-color: #f00;
+        box-shadow: 0 0 5px rgb(165, 16, 16);
+      }
+
+      .submit {
+        background-color: $main-bg;
       }
     }
   }
