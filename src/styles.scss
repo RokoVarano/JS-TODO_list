@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$main-bg: blue;
+$main-text: white;
+$second-bg: white;
+$second-h: blue;
+$second-p: black;
+$h-size: 2rem;
+$p-size: 1rem;
+$h-font: 'Roboto', sans-serif;
+$p-font: 'Roboto', sans-serif;
+
+// global resets
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+
+  main {
+    display: flex;
+    height: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// End Global reset
+
+.main {
+  background-color: $main-bg;
+  color: $main-text;
+}
+
+h1 {
+  font-size: $h-size;
+  font-family: $h-font;
+}
+
+.second {
+  background-color: $second-bg;
+  color: $second-p;
+
+  h1 {
+    color: $second-h;
+  }
+}
+
+h3 {
+  font-size: $h-size/2;
+  font-family: $h-font;
+}
+
+p {
+  font-size: $p-size;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@import './assets/styles/widgets';
+@import './assets//styles/form';
