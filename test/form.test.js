@@ -27,4 +27,9 @@ describe('Form', () => {
     const title = form.querySelector('[name = "name"]');
     expect(title.tagName).toBe('INPUT');
   });
+
+  it('should have a desc input', () => {
+    const title = form.querySelector('[name = "desc"]');
+    expect(title.tagName).toBe('INPUT');
+  });
 });
