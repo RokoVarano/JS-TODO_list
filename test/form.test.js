@@ -28,33 +28,33 @@ describe('Form', () => {
     expect(formProject.tagName).toBe('FORM');
   });
 
-  it('should have a title input element', () => {
+  it('should have a task title input element', () => {
     const title = form.querySelector('[name = "name"]');
     expect(title.tagName).toBe('INPUT');
   });
 
-  it('should have a desc input element', () => {
+  it('should have a task desc input element', () => {
     const desc = form.querySelector('[name = "desc"]');
     expect(desc.tagName).toBe('INPUT');
   });
 
-  it('should have a select element', () => {
+  it('should have a task select element', () => {
     const select = form.querySelector('[name = "priority"]');
     expect(select.tagName).toBe('SELECT');
     expect(select.childElementCount).toBe(3);
   });
 
-  it('should have 3 options', () => {
+  it('should have 3 task options', () => {
     const select = form.querySelector('[name = "priority"]');
     expect(select.childElementCount).toBe(3);
   });
 
-  it('should have a date input element', () => {
+  it('should have a task date input element', () => {
     const date = form.querySelector('[type = "date"]');
     expect(date.tagName).toBe('INPUT');
   });
 
-  it('should have a submit button', () => {
+  it('should have a task submit button', () => {
     const submitButton = form.querySelector('[type = "button"]');
     expect(submitButton.tagName).toBe('INPUT');
   });
