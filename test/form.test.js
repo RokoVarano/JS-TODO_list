@@ -23,13 +23,18 @@ describe('Form', () => {
     expect(form.tagName).toBe('FORM');
   });
 
-  it('should have a title input', () => {
+  it('should have a title input element', () => {
     const title = form.querySelector('[name = "name"]');
     expect(title.tagName).toBe('INPUT');
   });
 
-  it('should have a desc input', () => {
+  it('should have a desc input element', () => {
     const title = form.querySelector('[name = "desc"]');
     expect(title.tagName).toBe('INPUT');
+  });
+
+  it('should have a select element', () => {
+    const title = form.querySelector('[name = "priority"]');
+    expect(title.tagName).toBe('SELECT');
   });
 });
