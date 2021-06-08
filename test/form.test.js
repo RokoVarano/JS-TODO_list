@@ -7,7 +7,7 @@ describe('Form', () => {
   const task = taskForm();
   document.body.appendChild(task);
   const form = task.querySelector('.form');
-  
+
   const project = projectForm();
   document.body.appendChild(project);
 
@@ -21,5 +21,10 @@ describe('Form', () => {
 
   it('should return a form element', () => {
     expect(form.tagName).toBe('FORM');
+  });
+
+  it('should have a title input', () => {
+    const title = form.querySelector('[name = "name"]');
+    expect(title.tagName).toBe('INPUT');
   });
 });
