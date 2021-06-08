@@ -43,4 +43,9 @@ describe('Form', () => {
     const select = form.querySelector('[name = "priority"]');
     expect(select.childElementCount).toBe(3);
   });
+
+  it('should have a date input element', () => {
+    const date = form.querySelector('[type = "date"]');
+    expect(date.tagName).toBe('INPUT');
+  });
 });
