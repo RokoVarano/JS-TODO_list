@@ -10,17 +10,22 @@ describe('Form', () => {
 
   const project = projectForm();
   document.body.appendChild(project);
+  const formProject = project.querySelector('.form');
 
-  it('should create a form section', () => {
+  it('should create a task form section', () => {
     expect(task.tagName).toBe('SECTION');
   });
 
-  it('should create a form section', () => {
+  it('should create a project form section', () => {
     expect(project.tagName).toBe('SECTION');
   });
 
-  it('should return a form element', () => {
+  it('should return a task form element', () => {
     expect(form.tagName).toBe('FORM');
+  });
+
+  it('should return a project form element', () => {
+    expect(formProject.tagName).toBe('FORM');
   });
 
   it('should have a title input element', () => {
@@ -47,5 +52,10 @@ describe('Form', () => {
   it('should have a date input element', () => {
     const date = form.querySelector('[type = "date"]');
     expect(date.tagName).toBe('INPUT');
+  });
+
+  it('should have a submit button', () => {
+    const submitButton = form.querySelector('[type = "button"]');
+    expect(submitButton.tagName).toBe('INPUT');
   });
 });
