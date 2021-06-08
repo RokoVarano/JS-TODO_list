@@ -29,12 +29,18 @@ describe('Form', () => {
   });
 
   it('should have a desc input element', () => {
-    const title = form.querySelector('[name = "desc"]');
-    expect(title.tagName).toBe('INPUT');
+    const desc = form.querySelector('[name = "desc"]');
+    expect(desc.tagName).toBe('INPUT');
   });
 
   it('should have a select element', () => {
-    const title = form.querySelector('[name = "priority"]');
-    expect(title.tagName).toBe('SELECT');
+    const select = form.querySelector('[name = "priority"]');
+    expect(select.tagName).toBe('SELECT');
+    expect(select.childElementCount).toBe(3);
+  });
+
+  it('should have 3 options', () => {
+    const select = form.querySelector('[name = "priority"]');
+    expect(select.childElementCount).toBe(3);
   });
 });
