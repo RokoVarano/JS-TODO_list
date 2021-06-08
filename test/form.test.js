@@ -58,4 +58,9 @@ describe('Form', () => {
     const submitButton = form.querySelector('[type = "button"]');
     expect(submitButton.tagName).toBe('INPUT');
   });
+
+  it('should have a project title input element', () => {
+    const title = formProject.querySelector('[name = "name"]');
+    expect(title.tagName).toBe('INPUT');
+  });
 });
