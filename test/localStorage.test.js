@@ -76,5 +76,30 @@ describe('localStorage', () => {
         class: 'Project',
       }]);
     });
+
+    it('should update a project', () => {
+      const projectToUpdate = {
+        id: 0,
+        title: 'testProject',
+        task: [
+          {
+            title: 'new task',
+          },
+        ],
+        class: 'Project',
+      };
+
+      projectMemory.updateProject(projectToUpdate);
+      expect(projectMemory.getAllProjects()).toEqual([{
+        id: 0,
+        title: 'testProject',
+        task: [
+          {
+            title: 'new task',
+          },
+        ],
+        class: 'Project',
+      }]);
+    });
   });
 });
