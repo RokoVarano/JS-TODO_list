@@ -1,8 +1,6 @@
 import ProjectMemory from '../src/modules/backend/_localStorage';
 
 describe('localStorage', () => {
-  const projectMemory = new ProjectMemory();
-
   // Storage Mock
   function storageMock() {
     const storage = {};
@@ -27,5 +25,13 @@ describe('localStorage', () => {
     };
   }
 
-  window.localStorage = storageMock();
+  global.localStorage = storageMock();
+
+  describe('Project Memory', () => {
+    const projectMemory = new ProjectMemory();
+
+    it('should return an empty list', () => {
+      expect(projectMemory.getAllProjects()).toEqual([]);
+    });
+  });
 });
