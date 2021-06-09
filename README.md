@@ -19,6 +19,7 @@ This project currently features:
 - SASS
 - Node.js
 - Webpack
+- Jest
 
 ## Live Demo
 
@@ -51,8 +52,8 @@ To get a local copy up and running follow these simple example steps.
 - You can click the 'X' red button to delete a Task or a Project
 - You can click the 'Update Task' Button to edit the corresponding task.
 ### Run tests
-
-- No tests yet
+- `npm run test` to run all the tests
+- `npm run test 'path to test file'` to run individual test files.
 ## Authors
 
 👤 **Rodrigo Ibaceta**
