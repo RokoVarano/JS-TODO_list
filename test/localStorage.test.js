@@ -33,5 +33,17 @@ describe('localStorage', () => {
     it('should return an empty list', () => {
       expect(projectMemory.getAllProjects()).toEqual([]);
     });
+
+    it('should add project to localStorage', () => {
+      const testProject = {
+        title: 'testProject',
+        task: [],
+        class: 'Project',
+      };
+      projectMemory.addProject(testProject);
+      expect(JSON.parse(localStorage.getItem('projects'))).toEqual([{
+        id: 0, title: 'testProject', task: [], class: 'Project',
+      }]);
+    });
   });
 });
