@@ -65,5 +65,16 @@ describe('localStorage', () => {
         class: 'Project',
       }]);
     });
+
+    it('should delete a project', () => {
+      const projectToDelete = { id: 1 };
+      projectMemory.deleteProject(projectToDelete);
+      expect(projectMemory.getAllProjects()).toEqual([{
+        id: 0,
+        title: 'testProject',
+        task: [],
+        class: 'Project',
+      }]);
+    });
   });
 });
